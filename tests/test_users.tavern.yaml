@@ -1,0 +1,19 @@
+# This is testcases users microservices
+test_name: Create a new user
+
+stages:
+  - name: Make sure we are getting success response after posting
+
+    request:
+      url: http://127.0.0.1:5000/users
+      method: POST
+      json:
+        user_name: testuser15
+        email: test13@test.com
+        karma: 1
+      headers:
+        content-type: application/json
+
+    # The expected response code 201
+    response:
+      status_code: 201
